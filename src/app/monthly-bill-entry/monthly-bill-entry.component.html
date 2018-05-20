@@ -1,0 +1,17 @@
+<form class="monthly-bill-form">
+  <mat-form-field>
+    <input matInput placeholder="Name"  [(ngModel)]="monthlyBill.name" name="name">
+  </mat-form-field>
+  <br />
+  <mat-form-field>
+    <input matInput type="number" placeholder="Payment Amount"  [(ngModel)]="monthlyBill.amount" name="amount">
+  </mat-form-field>
+  <br />
+  <mat-form-field>
+    <input matInput [matDatepicker]="myDatepicker" placeholder="Payment Date" [(ngModel)]="monthlyBill.paymentDate" name="paymentDate">
+    <mat-datepicker-toggle matSuffix [for]="myDatepicker"></mat-datepicker-toggle>
+    <mat-datepicker #myDatepicker></mat-datepicker>
+  </mat-form-field>
+  <br />
+  <button mat-button (click)="submit()">Save</button>
+</form>
